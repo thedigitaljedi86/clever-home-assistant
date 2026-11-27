@@ -3,10 +3,10 @@
   "name": "Clever",
   "codeowners": ["@ham-der-udvikleren"],
   "config_flow": true,
-  "documentation": "https://github.com/ham-der-udvikleren/clever-home-assistant",
+  "documentation": "https://github.com/thedigitaljedi86/clever-home-assistant",
   "integration_type": "hub",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/ham-der-udvikleren/clever-home-assistant/issues",
+  "issue_tracker": "https://github.com/thedigitaljedi86/clever-home-assistant/issues",
   "requirements": [],
-  "version": "1.1.1"
+  "version": "1.2.0"
 }

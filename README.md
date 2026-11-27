@@ -6,6 +6,15 @@ Home Assistant-integration til **Clever**-ladebokse. Dette er en **uofficiel int
 
 ![Integrationen installeret i Home Assistant](img1.png)
 
+## Om denne fork
+
+Fork af [ham-der-udvikleren/clever-home-assistant](https://github.com/ham-der-udvikleren/clever-home-assistant) med disse rettelser (1.2.0):
+
+- **Energi i alt** (`sensor.energy_total`): samlet kWh på tværs af ladesessioner, bevares ved genstart og kan bruges i Energi-panelet (upstream issue #5).
+- **Smart opladning** viser nu den sendte kommando, indtil Clevers plan er opdateret, og en fejlet kommando giver en fejlbesked i stedet for at blive ignoreret (upstream issue #2). Alle API-kald logges på debug-niveau.
+- Bruger `async_get_device_by_identifier` i stedet for den forældede `device_registry.async_get_device` (holder op med at virke i HA 2027.8).
+- Tests (`pytest`, med `pytest-homeassistant-custom-component`).
+
 ## ⚠️ Læs dette først
 
 - Integrationen taler med de samme private og udokumenterede endpoints som Clevers app bruger. De kan blive ændret eller lukket ned uden varsel.
@@ -34,6 +43,7 @@ Alle entiteter virker med blot din Clever-konto - der kræves ingen ekstra opsæ
 | `sensor.live_status_message` - Statusbesked | Samme statusbesked som vises i Clever-appen |
 | `binary_sensor.is_charging` - Oplader | Om bilen oplader lige nu |
 | `binary_sensor.live_stop_requested` - Stop anmodet | Om opladningen blev stoppet manuelt (f.eks. fra bilen) |
+| `sensor.energy_total` - Energi i alt | Samlet leveret energi på tværs af sessioner (til Energi-panelet). Tæller fra installationen |
 
 ## Live-ladestatus
 
